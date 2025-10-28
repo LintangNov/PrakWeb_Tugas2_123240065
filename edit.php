@@ -60,7 +60,11 @@
         <div class="mb-3">
           <label class="form-label">Genre</label>
           <select name="genre" class="form-select" required>
-          <option value="<?= htmlspecialchars($film['genre']) ?>">Pilih Genre</option>
+            <?php
+              $gen = htmlspecialchars($film["genre"]);
+              echo "<option value='" . htmlspecialchars($gen) . "' $selected>$gen</option>";
+            ?>
+         
           <?php
             $genres = ['Romance', 'Action', 'Horror', 'Comedy'];
             foreach ($genres as $g) {
